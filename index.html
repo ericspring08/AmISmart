@@ -12,26 +12,29 @@
         <button id="buttonNo" style="position: absolute;">No</button>
     </body>
     <script>
+        function randomIntFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
         var buttonYes = document.getElementById("buttonYes");
         var buttonNo = document.getElementById("buttonNo");
         var x = 0;
         var y = 0;
 
         // on init set random position
-        x = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerWidth);
-        y = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerHeight);
+        x = randomIntFromInterval(60, window.innerWidth - 60);
+        y = randomIntFromInterval(60, window.innerHeight - 60);
 
         buttonYes.style.left = x + "px";
         buttonYes.style.top = y + "px";
 
         // set buttonNo to random position
-        buttonNo.style.left = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerWidth) + "px";
-        buttonNo.style.top = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerHeight) + "px";
+        buttonNo.style.left = randomIntFromInterval(60, window.innerWidth - 60) + "px";
+        buttonNo.style.top = randomIntFromInterval(60, window.innerHeight - 60) + "px";
 
         buttonYes.addEventListener('click', () => {
             // move button to random place on screen
-            x = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerWidth);
-            y = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerHeight);
+            x = randomIntFromInterval(60, window.innerWidth - 60) 
+            y = randomIntFromInterval(60, window.innerHeight - 60)
 
             buttonYes.style.left = x + "px";
             buttonYes.style.top = y + "px";
@@ -39,8 +42,8 @@
         
         function handlehover() {
             // move to random place on screen
-            x = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerWidth);
-            y = Math.floor(Math.abs((Math.random() - 0.1)) * window.innerHeight);
+            x = randomIntFromInterval(60, window.innerWidth - 60)
+            y = randomIntFromInterval(60, window.innerHeight - 60)
 
             buttonYes.style.left = x + "px";
             buttonYes.style.top = y + "px";
