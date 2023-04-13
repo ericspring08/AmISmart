@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body style="position:relative;">
         <h1 sytle="position:absolute;">Am You Smart?</h1>
@@ -50,7 +51,12 @@
         }
 
         buttonNo.addEventListener('click', () => {
-            alert("You are not smart! I knew it");
+            Swal.fire({
+                imageUrl: 'https://media3.giphy.com/media/fUYhyT9IjftxrxJXcE/giphy.gif?cid=ecf05e477x646ovrfu934wl0rr9mfyv8ai4bwdoyjzple42n&rid=giphy.gif&ct=g',
+                title: 'You are not smart!',
+                text: 'I knew it!',
+                confirmButtonText: 'Ok'
+            })
         });
     </script>
 
