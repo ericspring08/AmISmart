@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Am I Smart?</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="position:relative;">
+        <h1 sytle="position:absolute;">Am I Smart?</h1>
+        <button id="buttonYes" style="position: absolute;" onmouseover="handlehover()">Yes</button>
+        <button id="buttonNo" style="position: absolute;">No</button>
+    </body>
+    <script>
+        var buttonYes = document.getElementById("buttonYes");
+        var buttonNo = document.getElementById("buttonNo");
+        var x = 0;
+        var y = 0;
+
+        buttonYes.addEventListener('click', () => {
+            // move button to random place on screen
+            x = Math.floor(Math.random() * window.innerWidth);
+            y = Math.floor(Math.random() * window.innerHeight);
+
+            buttonYes.style.left = x + "px";
+            buttonYes.style.top = y + "px";
+        });
+        
+        function handlehover() {
+            // move to random place on screen
+            x = Math.floor(Math.random() * window.innerWidth);
+            y = Math.floor(Math.random() * window.innerHeight);
+
+            buttonYes.style.left = x + "px";
+            buttonYes.style.top = y + "px";
+        }
+
+        buttonNo.addEventListener('click', () => {
+            alert("You are not smart! I knew it");
+        });
+    </script>
+</html>
